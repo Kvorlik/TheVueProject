@@ -1,7 +1,8 @@
 <template>
   <div class="header">
-    This is from Header.vue
-    <h1>{{ msg }}</h1>
+    <div class="menu">
+      
+    </div>
   </div>
 </template>
 
@@ -14,5 +15,12 @@ export default {
 </script>
 
 <style scoped>
+.header{
+  width: 100%;
+  height: 500px;
+  background-image: url("../assets/headerbg.jpg");
+  background-size: cover;
+  background-position-y: 0%;
+}
 
 </style>
