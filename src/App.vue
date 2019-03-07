@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <Header msg="This is msg 1"/>
-    <MainWindow msg="This is msg 2"/>
-    <Footer msg="This is msg 3"/>
+    <Header/>
+    <MainWindow/>
+    <Footer/>
   </div>
 </template>
 
@@ -25,8 +25,14 @@ export default {
 body {
   margin: 0px;
   padding: 0px;
-  background-color: #efefef;
+  background-color: #eeeeee;
 }
+
+h1, h2, h3, h4, h5, h6, body, span {
+  font-family: Roboto,Helvetica,Arial,sans-serif;
+  font-weight: 300;
+}
+
 #app {
 
 }
