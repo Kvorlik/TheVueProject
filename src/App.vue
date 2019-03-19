@@ -28,12 +28,15 @@ body {
   background-color: #eeeeee;
 }
 
-h1, h2, h3, h4, h5, h6, body, span {
+* {
   font-family: Roboto,Helvetica,Arial,sans-serif;
-  font-weight: 300;
+  font-weight: normal;
+  letter-spacing: normal;
 }
 
-#app {
-
+a {
+  text-decoration: none;
+  outline: 0;
+  color: white;
 }
 </style>

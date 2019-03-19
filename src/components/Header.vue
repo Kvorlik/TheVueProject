@@ -1,18 +1,15 @@
 <template>
   <div class="header">
     <div class="menu">
-      <div class="nav1">The Project</div>
-      <div class="rightblock">
-        <div class="nav2">About us</div>
-        <div class="nav3">Login // Register</div>
-      </div>
+      <div class="nav1"><a href="#">The Project</a></div>
+      <div class="nav-blank"/>
+      <div class="nav2"><a href="#">About us</a></div>
+      <div class="nav3"><a href="#">Login</a> // <a href="#">Register</a></div>
     </div>
 
-    <div class="container" align="center">
     <div class="titles">
-      <span class="headertitle">Title of the project</span><br>
-      <span class="headersubtitle">Subtitle of the project</span>
-    </div>
+      <div class="headertitle">Title of the project</div>
+      <div class="headersubtitle">Subtitle of the project</div>
     </div>
   </div>
 </template>
@@ -26,7 +23,15 @@ export default {
 </script>
 
 <style scoped>
-.header{
+div::selection {
+  background: transparent;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
   width: 100%;
   height: 900px;
   background-image: url("../assets/temp-background.jpg");
@@ -34,60 +39,34 @@ export default {
   background-position-y: 100%;
 }
 
-.menu{
-  overflow: hidden;
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   width: 100%;
-  padding-top: 50px;
-  font-size: 18px;
-  color: white;
-  letter-spacing: normal;
+  margin-top: 30px;
 }
 
 .nav1, .nav2, .nav3 {
-  display: inline-block;
-  white-space:nowrap
-}
-
-.nav1 {
-  position: absolute;
-  left: 10%;
-}
-
-.nav2 {
-  margin-right: 50px;
-}
-
-.rightblock {
-  overflow: hidden;
-  position: absolute;
-  right: 10%;
-  display: inline-block;
-  white-space:nowrap
-}
-
-.container {
-  width: 100%;
-  height: 900px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  overflow: auto;
+  margin: 0 30px 0;
   color: white;
-  letter-spacing: normal;
-  text-shadow:
-  0 15px 102.86px rgba(0,0,0,.7),
-  0 15px 40.02px rgba(0,0,0,.21);
+  font-size: 20px;
+}
+
+.nav-blank {
+  flex-grow: 1;
 }
 
 .titles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 200px;
+  color: white;
+  text-shadow:
+  0 15px 102.86px rgba(0,0,0,.7),
+  0 15px 40.02px rgba(0,0,0,.21);
   width: 900px;
-  height: 200px;
-  position: absolute;
-  top: -100px;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  margin: auto;
 }
 
 .headertitle {

@@ -1,8 +1,18 @@
 <template>
   <div class="footer">
-    <div class="container" align="center">
-      <div class="copyrights">
+    <div class="container">
+      <div>
         &#169; 2019, made by dream team for OmSU
+      </div>
+
+      <div class="links">
+        <div class="git">
+          <a href="https://github.com/Kvorlik/TheVueProject" target="_blank"><img src="../assets/github_logo.png"/></a>
+        </div>
+
+        <div class="vue">
+          <a href="https://vuejs.org" target="_blank"><img src="../assets/vue_logo.png"/></a>
+        </div>
       </div>
     </div>
   </div>
@@ -18,28 +28,25 @@ export default {
 
 <style scoped>
 .footer{
-  margin: 30px;
+  margin: 10px 30px 10px;
   font-size: 18px;
   color: #3c4858;
-  letter-spacing: normal;
 }
 
 .container {
   width: 100%;
-  height: 20px;
-  position: relative;
-  top: 0;
-  left: 0;
-  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.copyrights{
-  width: 500px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  margin: auto;
+.links {
+  display: flex;
+  align-items: center;
+}
+
+.links img {
+  width: 32px;
+  margin: 10px 10px 0;
 }
 </style>
