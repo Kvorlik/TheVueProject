@@ -1,17 +1,19 @@
 <template>
-  <div class="mainwindow"></div>
+  <div class="home">Home page</div>
 </template>
 
 <script>
 export default {
-  props: {
-    msg: String
+  data(){
+    return {
+
+    }
   }
 }
 </script>
 
 <style scoped>
-.mainwindow{
+.home{
   height: 1000px;
   margin: -100px 30px 0;
   border-radius: 6px;
