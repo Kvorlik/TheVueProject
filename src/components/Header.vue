@@ -1,10 +1,10 @@
 <template>
   <div class="header">
     <div class="menu">
-      <div class="nav1"><a href="#">The Project</a></div>
+      <div class="nav1"><router-link to="/">The Project</router-link></div>
       <div class="nav-blank"/>
-      <div class="nav2"><a href="#">About us</a></div>
-      <div class="nav3"><a href="#">Login</a> // <a href="#">Register</a></div>
+      <div class="nav2"><router-link to="About">About us</router-link></div>
+      <div class="nav3"><router-link to="Login">Login</router-link> // <router-link to="Register">Register</router-link></div>
     </div>
 
     <div class="titles">
@@ -16,8 +16,10 @@
 
 <script>
 export default {
-  props: {
-    msg: String
+  data(){
+    return {
+
+    }
   }
 }
 </script>
