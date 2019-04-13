@@ -1,27 +1,30 @@
 <template>
   <div class="header">
     <div class="menu">
-      <div class="nav1"><router-link to="/">The Project</router-link></div>
+      <div class="nav1">
+        <router-link to="/">
+          <div class="nav1-wrap">
+            <img src="@/assets/firebase_logo.png"/>
+            <div class="nav1-text">
+              :/ Sportify
+            </div>
+          </div>
+        </router-link>
+      </div>
       <div class="nav-blank"/>
-      <div class="nav2"><router-link to="About">About us</router-link></div>
-      <div class="nav3"><router-link to="Login">Login</router-link> // <router-link to="Register">Register</router-link></div>
+      <div class="nav2"><router-link to="About">О нас</router-link></div>
+      <div class="nav3"><router-link to="Login">Вход</router-link> // <router-link to="Register">Регистрация</router-link></div>
     </div>
 
     <div class="titles">
-      <div class="headertitle">Title of the project</div>
-      <div class="headersubtitle">Subtitle of the project</div>
+      <div class="headertitle">Sportify</div>
+      <div class="headersubtitle">Спорт - это жизнь</div>
     </div>
   </div>
 </template>
 
 <script>
-export default {
-  data(){
-    return {
-
-    }
-  }
-}
+export default { }
 </script>
 
 <style scoped>
@@ -35,8 +38,8 @@ div::selection {
   flex-wrap: nowrap;
   align-items: center;
   width: 100%;
-  height: 900px;
-  background-image: url("../assets/temp-background.jpg");
+  height: 100vh;
+  background-image: url("../assets/head-background.jpg");
   background-size: cover;
   background-position-y: 100%;
 }
@@ -55,6 +58,23 @@ div::selection {
   font-size: 20px;
 }
 
+.nav1-wrap{
+  background-color: red;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border-radius: 10px 0 10px 0;
+}
+
+.nav1 img{
+  width: 32px;
+}
+
+.nav1-text{
+  color: black;
+  font-size: 25px;
+}
+
 .nav-blank {
   flex-grow: 1;
 }
@@ -63,7 +83,7 @@ div::selection {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 200px;
+  margin-top: 150px;
   color: white;
   text-shadow:
   0 15px 102.86px rgba(0,0,0,.7),
@@ -77,7 +97,8 @@ div::selection {
 }
 
 .headersubtitle {
-  font-size: 40px;
+  font-size: 25px;
+  font-style: italic;
 }
 
 </style>
