@@ -7,7 +7,7 @@
 
       <div class="links">
         <div class="git">
-          <a href="https://github.com/Kvorlik/TheVueProject" target="_blank"><img src="../assets/github_logo.png"/></a>
+          <a href="https://github.com/Kvorlik/vue-omsu" target="_blank"><img src="../assets/github_logo.png"/></a>
         </div>
 
         <div class="vue">
@@ -19,11 +19,7 @@
 </template>
 
 <script>
-export default {
-  props: {
-    msg: String
-  }
-}
+export default { }
 </script>
 
 <style scoped>

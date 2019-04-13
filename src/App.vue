@@ -1,21 +1,12 @@
 <template>
   <div id="app">
-    <Header/>
     <router-view/>
-    <Footer/>
   </div>
 </template>
 
 <script>
-import Header from '@/components/Header.vue'
-import Footer from '@/components/Footer.vue'
-
 export default {
-  name: 'app',
-  components: {
-    Header,
-    Footer
-  }
+  name: 'app'
 }
 </script>
 
@@ -27,9 +18,12 @@ body {
 }
 
 * {
-  font-family: Roboto,Helvetica,Arial,sans-serif;
+  /* font-family: Roboto,Helvetica,Arial,sans-serif;
   font-weight: normal;
-  letter-spacing: normal;
+  letter-spacing: normal; */
+  font-family: 'Raleway', 'RalewayOffline', sans-serif;
+  font-weight: 500;
+  letter-spacing: 2px;
 }
 
 a {
