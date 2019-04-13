@@ -7,11 +7,21 @@
 
       <div class="links">
         <div class="git">
-          <a href="https://github.com/Kvorlik/vue-omsu" target="_blank"><img src="../assets/github_logo.png"/></a>
+          <a href="https://github.com/Kvorlik/vue-omsu" target="_blank">
+            <img src="@/assets/github_logo.png"/>
+          </a>
         </div>
 
         <div class="vue">
-          <a href="https://vuejs.org" target="_blank"><img src="../assets/vue_logo.png"/></a>
+          <a href="https://vuejs.org" target="_blank">
+            <img src="@/assets/vue_logo.png"/>
+          </a>
+        </div>
+
+        <div class="firebase">
+          <a href="https://firebase.google.com/" target="_blank">
+            <img src="@/assets/firebase_logo.png"/>
+          </a>
         </div>
       </div>
     </div>
