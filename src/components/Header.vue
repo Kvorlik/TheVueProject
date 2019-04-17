@@ -5,33 +5,47 @@
         <router-link to="/">
           <div class="nav1-wrap">
             <img src="@/assets/firebase_logo.png"/>
-            <div class="nav1-text">
-              :/ Sportify
-            </div>
+            :/ Sportify
           </div>
         </router-link>
       </div>
       <div class="nav-blank"/>
-      <div class="nav2"><router-link to="About">О нас</router-link></div>
-      <div class="nav3"><router-link to="Login">Вход</router-link> // <router-link to="Register">Регистрация</router-link></div>
+      <div class="nav2">
+        <router-link to="/about">О нас</router-link>
+      </div>
+      <div class="nav3">
+        <router-link to="/login">Вход</router-link>
+        <span>&nbsp;//&nbsp;</span>
+        <router-link to="/register">Регистрация</router-link>
+      </div>
     </div>
 
-    <div class="titles">
+    <div v-if="showTitles" class="titles">
       <div class="headertitle">Sportify</div>
-      <div class="headersubtitle">Спорт - это жизнь</div>
+      <div class="headersubtitle">"Спорт - это жизнь"</div>
     </div>
   </div>
 </template>
 
 <script>
-export default { }
+export default {
+  data() {
+    return {
+      showTitles: true
+    }
+  },
+  watch: {
+    $route: function () {
+      if (this.$route.path == '/') {
+        this.showTitles = true;
+      }
+      else this.showTitles = false;
+    }
+  }
+}
 </script>
 
 <style scoped>
-div::selection {
-  background: transparent;
-}
-
 .header {
   display: flex;
   flex-direction: column;
@@ -49,13 +63,17 @@ div::selection {
   flex-wrap: wrap;
   justify-content: space-evenly;
   width: 100%;
-  margin-top: 30px;
+  height: 8vh;
+  margin-top: 1vh;
 }
 
 .nav1, .nav2, .nav3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0 30px 0;
   color: white;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .nav1-wrap{
@@ -68,11 +86,6 @@ div::selection {
 
 .nav1 img{
   width: 32px;
-}
-
-.nav1-text{
-  color: black;
-  font-size: 25px;
 }
 
 .nav-blank {
