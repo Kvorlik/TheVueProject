@@ -46,6 +46,7 @@ export default {
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
 .header {
   display: flex;
   flex-direction: column;
@@ -102,6 +103,7 @@ export default {
   0 15px 102.86px rgba(0,0,0,.7),
   0 15px 40.02px rgba(0,0,0,.21);
   width: 900px;
+  position: relative;
 }
 
 .headertitle {
@@ -110,8 +112,9 @@ export default {
 }
 
 .headersubtitle {
+  right: 0px;
   font-size: 25px;
-  font-style: italic;
+  font-family: 'Pacifico', cursive;
 }
 
 </style>
