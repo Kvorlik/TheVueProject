@@ -19,6 +19,7 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css?family=Exo+2');
 body {
   margin: 0px;
   padding: 0px;
@@ -29,9 +30,11 @@ body {
   /* font-family: Roboto,Helvetica,Arial,sans-serif;
   font-weight: normal;
   letter-spacing: normal; */
-  font-family: 'Raleway', 'RalewayOffline', sans-serif;
+  /* font-family: 'Raleway', 'RalewayOffline', sans-serif;
   font-weight: 500;
-  letter-spacing: 2px;
+  letter-spacing: 2px; */
+  /* font-family: 'Comfortaa', cursive; */
+  font-family: 'Exo 2', sans-serif;
 }
 
 *::selection {
