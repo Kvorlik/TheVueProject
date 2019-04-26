@@ -48,7 +48,7 @@ export default {
 
 <style scoped>
 .home{
-  margin: -40vh 30px 0;
+  margin: -40vh 2vw 0;
   border-radius: 6px;
   background: #fff;
   position: relative;

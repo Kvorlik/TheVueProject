@@ -34,7 +34,7 @@ export default {
 <style scoped>
 .notfound{
   height: 90vh;
-  margin: -90vh 30px 0;
+  margin: -90vh 2vw 0;
   border-radius: 6px;
   background: #fff;
   position: relative;
