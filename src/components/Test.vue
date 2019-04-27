@@ -15,9 +15,16 @@
         </div>
       </div>
     </div>
+
     <div class="frame" v-if="frameShow == 1">
-      second frame
+      Введите ваш возраст:<br>
+      <input type="text" v-model="stats.age"><br>
+      Рост:<br>
+      <input type="text" v-model="stats.height"><br>
+      И вес:<br>
+      <input type="text" v-model="stats.weight"><br>
     </div>
+
     <div class="frame" v-if="frameShow == 2">
       third frame
     </div>
@@ -29,6 +36,7 @@
     </div>
     <div class="link-button shadow" v-if="frameShow < 4" @click="frameShow++">Далее</div>
     <div class="link-button shadow" v-if="frameShow == 4" @click="end">Закончить</div>
+    <button type="button" @click="debug">Debug</button>
   </div>
 </template>
 
@@ -40,11 +48,17 @@ export default {
       frameShow: 0,
       isSelected: 0,
       stats: {
-        gender: 0
+        gender: 0,
+        age: 0,
+        height: 0,
+        weight: 0
       }
     }
   },
   methods: {
+    debug() {
+      console.log(this.stats);
+    },
     genderChoice(value) {
       this.isSelected = value;
       this.stats.gender = value;
