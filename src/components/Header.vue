@@ -1,5 +1,5 @@
 <template>
-  <div class="header">
+  <div class="header" v-if="showComponent">
     <div class="menu">
       <div class="nav1">
         <router-link to="/">
@@ -20,7 +20,7 @@
       </div>
     </div>
 
-    <div v-if="showTitles" class="titles">
+    <div class="titles" v-if="showTitles">
       <div class="headertitle">Sportify</div>
       <div class="headersubtitle">"Спорт - это жизнь"</div>
     </div>
@@ -31,16 +31,25 @@
 export default {
   data() {
     return {
-      showTitles: true
+      showTitles: true,
+      showComponent: true
     }
   },
-  watch: {
-    $route: function () {
-      if (this.$route.path == '/') {
+  methods: {
+    check(val) {
+      if (val == '/') {
         this.showTitles = true;
       }
       else this.showTitles = false;
-    }
+      if (val == '/void') {
+        this.showComponent = false;
+      }
+      else this.showComponent = true;
+    },
+  },
+  beforeMount: function () { this.check(this.$route.path); },
+  watch: {
+    $route: function () { this.check(this.$route.path); }
   }
 }
 </script>

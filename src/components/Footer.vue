@@ -13,7 +13,7 @@
         </div>
 
         <div class="vue">
-          <a href="https://vuejs.org" target="_blank">
+          <a href="https://ru.vuejs.org/index.html" target="_blank">
             <img src="@/assets/vue_logo.png"/>
           </a>
         </div>
