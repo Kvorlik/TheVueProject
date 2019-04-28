@@ -10,13 +10,13 @@
         </router-link>
       </div>
       <div class="nav-blank"/>
-      <div class="nav2">
-        <router-link to="/about">О нас</router-link>
+      <div class="nav2 underline">
+        <router-link to="/about"><span>О нас</span></router-link>
       </div>
-      <div class="nav3">
-        <router-link to="/login">Вход</router-link>
-        <span>&nbsp;//&nbsp;</span>
-        <router-link to="/register">Регистрация</router-link>
+      <div class="nav3 underline">
+        <router-link to="/login"><span>Вход</span></router-link>
+        &nbsp;//&nbsp;
+        <router-link to="/register"><span>Регистрация</span></router-link>
       </div>
     </div>
 
@@ -81,7 +81,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 30px 0;
+  margin: 0 2vw 0;
   color: white;
   font-size: 18px;
 }
@@ -126,4 +126,24 @@ export default {
   font-family: 'Pacifico', cursive;
 }
 
+.underline span{
+  text-decoration: none;
+  position: relative;
+}
+
+.underline span::before{
+  content: '';
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: white;
+  transition: .5s;
+}
+
+.underline span:hover::before{
+  width: 100%;
+  left: 0;
+}
 </style>

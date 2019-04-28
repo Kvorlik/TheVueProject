@@ -6,24 +6,33 @@
       <div class="circle-nav-buttons">
         <router-link to="/where-to-begin">
           <div class="circle-link-button btn1 shadow">
-            <div class="button-text">С чего начать?</div>
+            <div class="button-text underline">
+              <span>С чего начать?</span>
+            </div>
           </div>
         </router-link>
         <router-link to="/need-to-know">
           <div class="circle-link-button btn2 shadow">
-            <span class="button-text">Нужно знать<br>перед тренировкой</span>
+            <div class="button-text underline">
+              <span>Нужно знать</span><br>
+              <span>перед тренировкой</span>
+            </div>
           </div>
         </router-link>
         <router-link to="/progress">
           <div class="circle-link-button btn3 shadow">
-            <div class="button-text">Узнать достижения</div>
+            <div class="button-text underline">
+              <span>Узнать достижения</span>
+            </div>
           </div>
         </router-link>
       </div>
       <div class="big-button-wrap">
         <router-link to="/training">
           <div class="big-link-button shadow">
-            <div class="big-button-text">Начать тренировку</div>
+            <div class="big-button-text underline">
+              <span>Начать тренировку</span>
+            </div>
           </div>
         </router-link>
       </div>
@@ -48,6 +57,7 @@ export default {
 
 <style scoped>
 .home{
+  min-height: 90vh;
   margin: -40vh 2vw 0;
   border-radius: 6px;
   background: #fff;
@@ -74,8 +84,31 @@ export default {
   background-size: cover;
 }
 
+.underline span{
+  text-decoration: none;
+  position: relative;
+}
+
+.underline span::before{
+  content: '';
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: black;
+  transition: .5s;
+}
+
+.underline span:hover::before{
+  width: 100%;
+  left: 0;
+}
+
 .button-text,
-.big-button-text{
+.big-button-text,
+.underline span,
+.underline span::before{
   z-index: 10;
 }
 
@@ -88,7 +121,20 @@ export default {
   left: 0%;
   border: solid 2px;
   border-radius: 50%;
-  transition: 0.5s;
+  transition: .5s;
+  opacity: 0;
+}
+
+.button-text::after{
+  content: '';
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  left: 0%;
+  border: solid 2px;
+  border-radius: 50%;
+  transition: .5s;
   opacity: 0;
 }
 
@@ -101,7 +147,7 @@ export default {
   box-shadow:
   0 3px 3px 0 rgba(60,64,67,.08),
   0 3px 3px 3px rgba(60,64,67,.16);
-  transition: 0.2s;
+  transition: .2s;
 }
 
 .link-button:hover,
@@ -111,6 +157,15 @@ export default {
   box-shadow:
   0 6px 6px 0 rgba(60,64,67,.2),
   0 6px 6px 6px rgba(60,64,67,.2);
+  color: black;
+}
+
+.link-button:hover{
+  transform: translateY(-5px);
+}
+
+.circle-link-button:hover{
+  transform: rotate(360deg);
 }
 
 .circle-nav-buttons{
@@ -129,6 +184,7 @@ export default {
   text-align: center;
   border-radius: 50%;
   position: relative;
+  transition: .5s;
 }
 
 .big-link-button::before,
@@ -140,6 +196,13 @@ export default {
   background-color: black;
   opacity: 0.3;
   border-radius: 50%;
+  transition: .5s;
+}
+
+.big-link-button:hover:before,
+.circle-link-button:hover:before{
+  background-color: #ff9900;
+  opacity: 0.7;
 }
 
 .big-link-button::before{
@@ -152,9 +215,8 @@ export default {
 
 .test-invitation{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  color: black;
 }
 
 .link-button{
@@ -181,7 +243,7 @@ export default {
   align-items: center;
   width: 60vw;
   height: 40vh;
-  font-size: 25px;
+  font-size: 50px;
   border-radius: 6px;
   background-image: url("../assets/home/start.jpg");
   background-size: cover;

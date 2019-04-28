@@ -66,7 +66,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 30px 0;
+  margin: 0 2vw 0;
   font-size: 18px;
 }
 
@@ -102,7 +102,7 @@ export default {
   box-shadow:
   0 3px 3px 0 rgba(60,64,67,.08),
   0 3px 3px 3px rgba(60,64,67,.16);
-  transition: 0.2s;
+  transition: .2s;
 }
 
 .link-button:hover{
@@ -110,6 +110,7 @@ export default {
   box-shadow:
   0 3px 6px 0px rgba(255,3,3,.5),
   0 3px 6px 6px rgba(255,3,3,.6);
+  color: black;
   transform: translateY(-5px);
 }
 
@@ -117,7 +118,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ffa726;
+  background-color: #ff9900;
   width: 200px;
   height: 50px;
   font-size: 18px;
