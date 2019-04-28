@@ -21,8 +21,11 @@
           <br>Вес
         </div>
       </div>
-      <p class="p">Также рекомендуется использовать <span>фитнес-трекер</span> для контроля
-        изменения состояния своего организма в процессе тренировок.</p>
+      <p class="p">
+        Также рекомендуется использовать
+        <span>фитнес-трекер</span>
+        для контроля изменения состояния своего организма в процессе тренировок.
+      </p>
     </div>
   </div>
 </template>
@@ -46,7 +49,7 @@ export default {
 }
 
 span{
-  color: #ffa726;
+  color: #ff9900;
 }
 
 img {
@@ -55,8 +58,8 @@ img {
 }
 
 .begin{
-  height: 90vh;
-  margin: -90vh 30px 0;
+  min-height: 90vh;
+  margin: -90vh 2vw 0;
   border-radius: 6px;
   background: #fff;
   position: relative;
