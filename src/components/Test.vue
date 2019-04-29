@@ -92,6 +92,7 @@
 </template>
 
 <script>
+import db from "@/firebase/init";
 export default {
   name: 'test',
   data() {
@@ -100,11 +101,11 @@ export default {
       isSelected: 0,
       stats: {
         gender: "",
-        age: "",
-        height: "",
-        weight: "",
-        circle: "",
-        pulse: ""
+        age: null,
+        height: null,
+        weight: null,
+        circle: null,
+        pulse: null
       }
     }
   },
@@ -120,17 +121,17 @@ export default {
           else { alert("Выберите пол."); }
           break;
         case 1:
-          if (this.stats.age.length != 0 &&
-              this.stats.height.length != 0 &&
-              this.stats.weight.length != 0) { this.frameShow++; }
+          if (this.stats.age != null &&
+              this.stats.height != null &&
+              this.stats.weight != null) { this.frameShow++; }
           else { alert("Необходимо заполнить все поля."); }
           break;
         case 2:
-          if (this.stats.circle.length != 0) { this.frameShow++; }
+          if (this.stats.circle != null) { this.frameShow++; }
           else { alert("Необходимо ввести окружность."); }
           break;
         case 3:
-          if (this.stats.pulse.length != 0) { this.frameShow++; }
+          if (this.stats.pulse != null) { this.frameShow++; }
           else { alert("Необходимо ввести пульс"); }
           break;
         default:
@@ -138,8 +139,18 @@ export default {
       }
     },
     end() {
-      // Действия с Firebase
-      this.$router.push({ name: 'Home' })
+      db.collection("user-statistics").add({
+        gender: this.stats.gender,
+        age: this.stats.age,
+        height: this.stats.height,
+        weight: this.stats.weight,
+        circle: this.stats.circle,
+        pulse: this.stats.pulse
+      }).then(() => {
+        this.$router.push({ name: 'Home' })
+      }).catch(err => {
+        throw new Error(err)
+      })
     },
     idealWeiht() { return 999 },
     bodyType() { return "Тип"},
