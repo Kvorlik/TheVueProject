@@ -31,7 +31,7 @@
             <div class="label flex">
               <span>Рост</span>
             </div>
-            <input type="text" v-model="stats.height" placeholder="М">
+            <input type="text" v-model="stats.height" placeholder="См">
           </div>
           <div class="container flex input-container square-input">
             <img src="../assets/test/img3.png">
@@ -68,12 +68,12 @@
             <span class="painted result">{{ idealWeiht() }}</span>
           </div>
           <div class="container flex shadow frame4">
-            <span>Допустимый диапозон измерения пульса:&nbsp;</span>
+            <span>Допустимый диапозон изменения пульса:&nbsp;</span>
             <span class="painted result">{{ pulseRange() }}</span>
           </div>
           <div class="container flex shadow frame4">
             <span>Тип телосложения:&nbsp;</span>
-            <span class="painted result">{{ bodyType() }}</span>
+            <span class="painted">{{ bodyType() }}</span>
           </div>
         </div>
         <div class="wrapper">
@@ -152,10 +152,83 @@ export default {
         throw new Error(err)
       })
     },
-    idealWeiht() { return 999 },
-    bodyType() { return "Тип"},
-    weightType() { return "нормальная масса"},
-    pulseRange() { return "0-999"}
+    idealWeiht() {
+      let res = null;
+
+      if (this.stats.age < 40) {
+        res = this.stats.height - 110;
+      }
+      else res = this.stats.height - 100;
+      return res;
+    },
+    bodyType() {
+      let res = null;
+
+      if (this.stats.gender == "man") {
+        if (this.stats.circle < 18){
+          res = "астенический (тонкокостный)";
+        }
+        if (this.stats.circle >= 18 && this.stats.circle <= 20){
+          res = "мормостенический (нормальный)";
+        }
+        if (this.stats.circle > 20){
+          res = "гиперстеничесий (ширококостный)";
+        }
+      }
+      else {
+        if (this.stats.circle < 15){
+          res = "астенический (тонкокостный)";
+        }
+        if (this.stats.circle >= 15 && this.stats.circle <= 17){
+          res = "мормостенический (нормальный)";
+        }
+        if (this.stats.circle > 17){
+          res = "гиперстенический (ширококостный)";
+        }
+      }
+      return res;
+    },
+    weightType() {
+      let res = null;
+      let index = (this.stats.weight / ((this.stats.height * 0.01)^2));
+
+      if (index < 18.5) {
+        res = "дефицит массы";
+      }
+      if (index >= 18.5 && index <= 24.9) {
+        res = "нормальная масса";
+      }
+      if (index >= 25 && index <= 29.9) {
+        res = "предожирение";
+      }
+      if (index >= 30 && index <= 34.9) {
+        res = "ожирение первой степени";
+      }
+      if (index >= 35 && index <= 39.9) {
+        res = "ожирение второй степени";
+      }
+      if (index >= 40) {
+        res = "ожирение третьей степени";
+      }
+      return res;
+    },
+    pulseRange() {
+      let peak = null;
+      let min = null;
+      let max = null;
+      let age = parseInt(this.stats.age);
+      let pulse = parseInt(this.stats.pulse);
+
+      if (this.stats.gender == "man") {
+        peak = ((((205 - 0.5 * age) - pulse) * 70) / 100) + pulse;
+      }
+      else {
+        peak = ((((220 - age) - pulse) * 60) / 100) + pulse;
+      }
+      min = (peak - (0.06 * peak));
+      max = (peak + (0.06 * peak));
+      return parseInt(min) + ' - ' + parseInt(max);
+    }
   }
 }
 </script>
