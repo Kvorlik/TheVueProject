@@ -62,6 +62,7 @@ export default {
   width: 100%;
   height: 8vh;
   margin-top: 1vh;
+  z-index: 10;
 }
 
 .nav1 {
@@ -150,19 +151,18 @@ export default {
   font-size: 300px;
   font-family: Roboto, Helvetica, Arial, sans-serif;
   font-weight: bolder;
-  text-shadow: 0 0 100px red;
   mix-blend-mode: soft-light;
-  opacity: .6;
+  opacity: .7;
   transition: 1s;
   animation: shadow 2s infinite alternate;
 }
 
 @keyframes shadow {
   from {
-    text-shadow: 0 0 100px red;
+    text-shadow: 0 0 400px red;
   }
   to {
-    text-shadow: 0 0 30px black;
+    text-shadow: 0 0 10px black;
   }
 }
 </style>
