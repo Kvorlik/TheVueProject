@@ -13,6 +13,8 @@
       <div class="nav-blank"/>
     </div>
 
+    <div class="center-content"><span>404</span></div>
+
     <div class="controls">
       Страница не существует
       <div class="nav-buttons">
@@ -45,9 +47,9 @@ export default {
 .notfound{
   height: 100vh;
   background: #fff;
-  background-image: url("../assets/void/404.png");
+  background-image: url("../assets/void/404.jpg");
   background-size: cover;
-  background-position-y: 70%;
+  background-position-y: 60%;
   font-size: 25px;
   color: #fff;
 }
@@ -131,5 +133,36 @@ export default {
   justify-content: flex-end;
   align-items: center;
   height: 100vh;
+}
+
+.center-content{
+  cursor: default;
+  position: absolute;
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center-content span{
+  color: black;
+  font-size: 300px;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-weight: bolder;
+  text-shadow: 0 0 100px red;
+  mix-blend-mode: soft-light;
+  opacity: .6;
+  transition: 1s;
+  animation: shadow 2s infinite alternate;
+}
+
+@keyframes shadow {
+  from {
+    text-shadow: 0 0 100px red;
+  }
+  to {
+    text-shadow: 0 0 30px black;
+  }
 }
 </style>
