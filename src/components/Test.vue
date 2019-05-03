@@ -1,5 +1,5 @@
 <template>
-  <div class="test shadow">
+  <div class="test shadow" :class="{ anotherbackground: anotherBackground }">
     <div class="content-area">
       <h1 class="main-header" v-if="frameShow < 4">Подготовка к тренировке</h1>
       <h1 class="main-header" v-if="frameShow == 4">Результаты</h1>
@@ -43,9 +43,8 @@
         </div>
       </div>
       <div class="frame" v-if="frameShow == 2">
-        Введите окружность самого тонкого места на запястье:
+        Введите окружность самого тонкого<br>места на запястье:
         <div class="flex column-flex frame2">
-          <img src="../assets/test/hand.png">
           <input type="text" v-model="stats.circle" placeholder="Окружность, см">
         </div>
       </div>
@@ -98,7 +97,8 @@ export default {
   data() {
     return {
       frameShow: 0,
-      isSelected: 0,
+      isSelected: null,
+      anotherBackground: false,
       stats: {
         gender: "",
         age: null,
@@ -229,6 +229,15 @@ export default {
       max = (peak + (0.06 * peak));
       return parseInt(min) + ' - ' + parseInt(max);
     }
+  },
+  watch: {
+    frameShow: function() {
+      if (this.frameShow == 2) {
+        this.anotherBackground = true;
+      } else {
+        this.anotherBackground = false;
+      }
+    }
   }
 }
 </script>
@@ -248,7 +257,14 @@ export default {
   font-size: 20px;
 }
 
+.anotherbackground{
+  background-image: url("../assets/test/another_back.jpg");
+  background-position-y: 0;
+}
+
 .content-area{
+  min-height: 90vh;
+  position: relative;
   margin: 0 50px 0;
   padding: 30px 0 30px;
 }
@@ -343,9 +359,9 @@ input[type="text"]{
   height: 50px;
 }
 
-.frame2 img{
-  height: 50vh;
-  margin: 2vh;
+.frame2{
+  height: 65vh;
+  justify-content: flex-end;
 }
 
 .frame3 img{
