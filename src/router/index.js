@@ -4,6 +4,7 @@ import Home from '@/components/Home'
 import Void from '@/components/Void'
 import Test from '@/components/Test'
 import Begin from '@/components/Begin'
+import Need from '@/components/Need'
 
 Vue.use(Router)
 
@@ -14,6 +15,7 @@ export default new Router({
     {path: '/void', name: 'Void', component: Void},
     {path: '/test', name: 'Test', component: Test},
     {path: '/where-to-begin', name: 'Begin', component: Begin},
+    {path: '/need-to-know', name: 'Need', component: Need},
     {path: '*', redirect: '/void'}
   ]
 })
