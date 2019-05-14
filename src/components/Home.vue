@@ -5,14 +5,14 @@
       Вас приветствует сервис онлайн-тренировок "Sportify".
       <div class="circle-nav-buttons">
         <router-link to="/where-to-begin">
-          <div class="circle-link-button btn1 shadow">
+          <div class="circle-link-button flex btn1 shadow">
             <div class="button-text underline">
               <span>С чего начать?</span>
             </div>
           </div>
         </router-link>
         <router-link to="/need-to-know">
-          <div class="circle-link-button btn2 shadow">
+          <div class="circle-link-button flex btn2 shadow">
             <div class="button-text underline">
               <span>Нужно знать</span><br>
               <span>перед тренировкой</span>
@@ -20,28 +20,35 @@
           </div>
         </router-link>
         <router-link to="/progress">
-          <div class="circle-link-button btn3 shadow">
+          <div class="circle-link-button flex btn3 shadow">
             <div class="button-text underline">
               <span>Узнать достижения</span>
             </div>
           </div>
         </router-link>
       </div>
-      <div class="big-button-wrap">
-        <router-link to="/training">
-          <div class="big-link-button shadow">
-            <div class="big-button-text underline">
-              <span>Начать тренировку</span>
-            </div>
-          </div>
-        </router-link>
+
+      <div class="flex icon-container">
+        <span>
+          Для полноценной тренировки на все группы мышц
+          не нужен абонемент в спортзал, тренажёры и свободные веса.
+          Всё, что вам понадобится — <br>
+          <u>ваше тело</u>.
+        </span>
+        <div class="icon-wrapper">
+          <router-link :to="{ name: 'Training'}">
+            <play-icon color="#ff9900"/>
+            <span>Начать!</span>
+          </router-link>
+        </div>
       </div>
-      <div class="test-invitation">
+
+      <div class="test-invitation flex">
         Хотите узнать уровень своей физической подготовки?
         Наш тест поможет вам сделать это!
         <div class="button-wrap">
           <router-link to="/test">
-            <div class="link-button shadow">Начать тест</div>
+            <div class="link-button flex shadow">Начать тест</div>
           </router-link>
         </div>
       </div>
@@ -50,8 +57,12 @@
 </template>
 
 <script>
+import PlayIcon from "./svg/PlayIcon"
 export default {
-  name: 'home'
+  name: 'home',
+  components: {
+    PlayIcon
+  }
 }
 </script>
 
@@ -63,12 +74,10 @@ export default {
   background: #fff;
   position: relative;
   font-size: 20px;
+  overflow-x: hidden;
 }
 
-.content-area{
-  margin: 0 50px 0;
-  padding: 30px 0 30px;
-}
+.content-area{ padding: 3vh 2vw; }
 
 .main-header{
   text-align: center;
@@ -106,9 +115,10 @@ export default {
 }
 
 .button-text,
-.big-button-text,
 .underline span,
-.underline span::before{
+.underline span::before,
+.icon-container span,
+.icon-wrapper{
   z-index: 10;
 }
 
@@ -151,7 +161,6 @@ export default {
 }
 
 .link-button:hover,
-.big-link-button:hover,
 .circle-link-button:hover{
   cursor: pointer;
   box-shadow:
@@ -160,24 +169,16 @@ export default {
   color: black;
 }
 
-.link-button:hover{
-  transform: translateY(-5px);
-}
-
-.circle-link-button:hover{
-  transform: rotate(360deg);
-}
+.link-button:hover{ transform: translateY(-5px); }
+.circle-link-button:hover{ transform: rotate(360deg); }
 
 .circle-nav-buttons{
   display: flex;
   justify-content: space-around;
-  margin: 100px 50px 100px;
+  margin: 10vh 3vw 0;
 }
 
 .circle-link-button{
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 20vw;
   height: 20vw;
   font-size: 25px;
@@ -187,7 +188,6 @@ export default {
   transition: .5s;
 }
 
-.big-link-button::before,
 .circle-link-button::before{
   content: '';
   position: absolute;
@@ -199,30 +199,15 @@ export default {
   transition: .5s;
 }
 
-.big-link-button:hover:before,
 .circle-link-button:hover:before{
   background-color: #ff9900;
   opacity: 0.7;
 }
 
-.big-link-button::before{
-  border-radius: 6px;
-}
-
-.button-wrap{
-  padding: 0 50px 0;
-}
-
-.test-invitation{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
+.button-wrap{ padding: 0 50px 0; }
+.test-invitation{ justify-content: space-around; }
 
 .link-button{
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background-color: green;
   width: 500px;
   height: 90px;
@@ -230,24 +215,52 @@ export default {
   border-radius: 6px;
 }
 
-.big-button-wrap{
+.flex{
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 100px 50px;
 }
 
-.big-link-button{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 60vw;
-  height: 40vh;
-  font-size: 50px;
-  border-radius: 6px;
-  background-image: url("../assets/home/start.jpg");
+.icon-container{
+  position: relative;
+  justify-content: flex-end;
+  width: 96vw;
+  margin: 10vh -2vw 3vh;
+  background-image: url("../assets/home/banner.png");
   background-size: cover;
-  background-position-y: 50%;
+}
+
+.icon-container > span{
+  position: absolute;
+  left: 15vh;
+  width: 35%;
+  color: white;
+  font-size: 2.5vw;
+  text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
+  cursor: default;
+}
+
+.icon-wrapper{
+  width: 20vw;
+  height: 20vw;
+  margin: 10vh 15vh;
   position: relative;
 }
+
+.icon-wrapper span{
+  position: absolute;
+  top: 11vw;
+  left: 2vw;
+  font-size: 4vw;
+  color: #ff9900;
+  z-index: 10;
+  transform: rotateZ(-29deg);
+  cursor: pointer;
+}
+.icon-wrapper,
+.icon-wrapper svg,
+.icon-wrapper span{ transition: .5s; }
+.icon-wrapper:hover span{ color: black; }
+.icon-wrapper:hover{ transform: scale(1.1); }
+
 </style>
