@@ -169,6 +169,14 @@
         <div class="link-button shadow flex" v-if="frameShow < 10" @click="isFilled(frameShow)">Далее</div>
         <div class="link-button shadow flex" v-if="frameShow == 10" @click="end()">Закончить</div>
       </div>
+      <!-- dev -->
+      <button
+        @click="setDefault()"
+        style="
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          opacity: 0.5;">Set default</button>
     </div>
   </div>
 </template>
@@ -201,10 +209,34 @@ export default {
         strength: null,
         rate: null,
         rateStrength: null
+      },
+      result: {
+        idealWght: null,
+        pulseRng: "",
+        figureType: "",
+        wghtType: "",
+        physicalLvl: ""
       }
     }
   },
   methods: {
+    setDefault() {
+      this.stats.gender = 'man',
+      this.stats.age = 20,
+      this.stats.height = 181,
+      this.stats.weight = 70,
+      this.stats.circle = 18,
+      this.stats.pulse = 70,
+      this.stats.systole = 120,
+      this.stats.diastole = 80,
+      this.stats.flexibility = 10,
+      this.stats.rapidity = 2,
+      this.stats.strength = 70,
+      this.stats.rate = 15,
+      this.stats.rateStrength = 15,
+      this.frameShow = 10
+    },
+
     genderChoice(value) {
       this.isSelected = value;
       this.stats.gender = value;
@@ -295,19 +327,11 @@ export default {
 
     end() {
       db.collection("user-statistics").add({
-        gender: this.stats.gender,
-        age: this.stats.age,
-        height: this.stats.height,
-        weight: this.stats.weight,
-        circle: this.stats.circle,
-        pulse: this.stats.pulse,
-        systole: this.stats.systole,
-        diastole: this.stats.diastole,
-        flexibility: this.stats.flexibility,
-        rapidity: this.stats.rapidity,
-        strength: this.stats.strength,
-        rate: this.stats.rate,
-        rateStrength: this.stats.rateStrength
+        idealWght: this.idealWeiht(),
+        pulseRng: this.pulseRange(),
+        figureType: this.bodyType(),
+        wghtType: this.weightType(),
+        physicalLvl: this.physicalLevel()
       }).then(() => {
         this.$router.push({ name: 'Home' });
       }).catch(err => {
@@ -551,14 +575,14 @@ export default {
       let res = null;
 
       if (this.stats.gender == "man") {
-        if (this.stats.circle < 18) res = "астенический (тонкокостный)";
-        if (this.stats.circle >= 18 && this.stats.circle <= 20) res = "нормостенический (нормальный)";
-        if (this.stats.circle > 20) res = "гиперстеничесий (ширококостный)";
+        if (this.stats.circle < 18) res = "тонкокостный";
+        if (this.stats.circle >= 18 && this.stats.circle <= 20) res = "нормальный";
+        if (this.stats.circle > 20) res = "ширококостный";
       }
       else {
-        if (this.stats.circle < 15) res = "астенический (тонкокостный)";
-        if (this.stats.circle >= 15 && this.stats.circle <= 17) res = "нормостенический (нормальный)";
-        if (this.stats.circle > 17) res = "гиперстенический (ширококостный)";
+        if (this.stats.circle < 15) res = "тонкокостный";
+        if (this.stats.circle >= 15 && this.stats.circle <= 17) res = "нормальный";
+        if (this.stats.circle > 17) res = "ширококостный";
       }
       return res;
     },
@@ -651,8 +675,7 @@ export default {
 .content-area{
   min-height: 90vh;
   position: relative;
-  margin: 0 50px 0;
-  padding: 30px 0 30px;
+  padding: 3vh 2vw;
 }
 
 .shadow{
