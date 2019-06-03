@@ -175,6 +175,7 @@
 
 <script>
 import db from "@/firebase/init";
+import swal from 'sweetalert';
 export default {
   name: 'test',
   data() {
@@ -222,73 +223,73 @@ export default {
             this.incProgressBar();
             this.frameShow++;
           }
-          else alert("Выберите пол.");
+          else swal({text: "Выберите пол", icon: "warning", button: "Ага"});
           break;
         case 1:
           if (this.stats.age != null && this.stats.height != null && this.stats.weight != null) {
             this.incProgressBar();
             this.frameShow++;
           }
-          else alert("Необходимо заполнить все поля.");
+          else swal({text: "Необходимо заполнить все поля", icon: "warning", button: "Ага"});
           break;
         case 2:
           if (this.stats.circle != null) {
             this.incProgressBar();
             this.frameShow++;
           }
-          else alert("Необходимо ввести окружность.");
+          else swal({text: "Необходимо ввести окружность", icon: "warning", button: "Ага"});
           break;
         case 3:
           if (this.stats.pulse != null) {
             this.incProgressBar();
             this.frameShow++;
           }
-          else alert("Необходимо ввести пульс");
+          else swal({text: "Необходимо ввести пульс", icon: "warning", button: "Ага"});
           break;
         case 4:
           if (this.stats.systole != null && this.stats.diastole != null) {
             this.incProgressBar();
             this.frameShow++;
           }
-          else alert("Необходимо ввести артериальное давление");
+          else swal({text: "Необходимо ввести артериальное давление", icon: "warning", button: "Ага"});
           break;
         case 5:
           if (this.stats.flexibility != null) {
             this.incProgressBar();
             this.frameShow++;
           }
-          else alert("Необходимо ввести показатель гибкости");
+          else swal({text: "Необходимо ввести показатель гибкости", icon: "warning", button: "Ага"});
           break;
         case 6:
           if (this.stats.rapidity != null) {
             this.incProgressBar();
             this.frameShow++;
           }
-          else alert("Необходимо ввести показатель быстроты");
+          else swal({text: "Необходимо ввести показатель быстроты", icon: "warning", button: "Ага"});
           break;
         case 7:
           if (this.stats.strength != null) {
             this.incProgressBar();
             this.frameShow++;
           }
-          else alert("Необходимо ввести показатель динамической силы");
+          else swal({text: "Необходимо ввести показатель динамической силы", icon: "warning", button: "Ага"});
           break;
         case 8:
           if (this.stats.rate != null) {
             this.incProgressBar();
             this.frameShow++;
           }
-          else alert("Необходимо ввести показатель скоростной выносливости");
+          else swal({text: "Необходимо ввести показатель скоростной выносливости", icon: "warning", button: "Ага"});
           break;
         case 9:
           if (this.stats.rateStrength != null) {
             this.incProgressBar();
             this.frameShow++;
           }
-          else alert("Необходимо ввести показатель скоростно-силовой выносливости");
+          else swal({text: "Необходимо ввести показатель скоростно-силовой выносливости", icon: "warning", button: "Ага"});
           break;
         default:
-          alert('Error. frameShow = ' + this.frameShow);
+          swal({text: "Error. frameShow = " + this.frameShow, icon: "error", button: "Ага"});
       }
     },
 
