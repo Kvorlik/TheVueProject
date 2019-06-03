@@ -19,10 +19,10 @@
             </div>
           </div>
         </router-link>
-        <router-link to="/progress">
+        <router-link to="/statistic">
           <div class="circle-link-button flex btn3 shadow">
             <div class="button-text underline">
-              <span>Узнать достижения</span>
+              <span>Статистика</span>
             </div>
           </div>
         </router-link>
