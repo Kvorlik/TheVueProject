@@ -1,5 +1,7 @@
 # vue-omsu
-A single page web application for OmSU
+A single page web application for OmSU.
+
+[Link to our project](https://vue-omsu-6aa01.web.app/).
 
 ### Project setup
 ```
