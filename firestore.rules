@@ -1,12 +1,12 @@
 service cloud.firestore {
   match /databases/{database}/documents {
-    match /exercises/{document=**} {
+    match /user-statistics/{document=**} {
       allow read: if true;
       allow create: if true;
       allow update: if false;
       allow delete: if false;
     }
-    match /user-statistics/{document=**} {
+    match /exercises/{document=**} {
       allow read: if true;
       allow write: if false;
     }
