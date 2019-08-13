@@ -134,7 +134,7 @@
           <div align="justify">
             Измеряется максимальная частота сгибания рук в упоре лежа (женщины в упоре на коленях) за 30 секунд.
           </div>
-          <input type="text" v-model="stats.rateStrength" placeholder="Значеие ССВ, раз">
+          <input type="text" v-model="stats.rateStrength" placeholder="Значение ССВ, раз">
         </div>
       </div>
       <div v-if="frameShow == 10">
@@ -234,64 +234,94 @@ export default {
           break;
         case 1:
           if (this.stats.age != null && this.stats.height != null && this.stats.weight != null) {
-            this.incProgressBar();
-            this.frameShow++;
+            if (isFinite(this.stats.age) && this.stats.age > 0 &&
+                isFinite(this.stats.height) && this.stats.height > 0 &&
+                isFinite(this.stats.weight) && this.stats.weight > 0){
+              this.incProgressBar();
+              this.frameShow++;
+            }
+            else swal({text: "Значения должны быть положительным числом", icon: "warning", button: "Понятно"});
           }
           else swal({text: "Необходимо заполнить все поля", icon: "warning", button: "Ага"});
           break;
         case 2:
           if (this.stats.circle != null) {
-            this.incProgressBar();
-            this.frameShow++;
+            if (isFinite(this.stats.circle) && this.stats.circle > 0){
+              this.incProgressBar();
+              this.frameShow++;
+            }
+            else swal({text: "Значения должны быть положительным числом", icon: "warning", button: "Понятно"});
           }
           else swal({text: "Необходимо ввести окружность", icon: "warning", button: "Ага"});
           break;
         case 3:
           if (this.stats.pulse != null) {
-            this.incProgressBar();
-            this.frameShow++;
+            if (isFinite(this.stats.pulse) && this.stats.pulse > 0){
+              this.incProgressBar();
+              this.frameShow++;
+            }
+            else swal({text: "Значения должны быть положительным числом", icon: "warning", button: "Понятно"});
           }
           else swal({text: "Необходимо ввести пульс", icon: "warning", button: "Ага"});
           break;
         case 4:
           if (this.stats.systole != null && this.stats.diastole != null) {
-            this.incProgressBar();
-            this.frameShow++;
+            if (isFinite(this.stats.systole) && this.stats.systole > 0 &&
+                isFinite(this.stats.diastole) && this.stats.diastole > 0){
+              this.incProgressBar();
+              this.frameShow++;
+            }
+            else swal({text: "Значения должны быть положительным числом", icon: "warning", button: "Понятно"});
           }
           else swal({text: "Необходимо ввести артериальное давление", icon: "warning", button: "Ага"});
           break;
         case 5:
           if (this.stats.flexibility != null) {
-            this.incProgressBar();
-            this.frameShow++;
+            if (isFinite(this.stats.flexibility) && this.stats.flexibility > 0){
+              this.incProgressBar();
+              this.frameShow++;
+            }
+            else swal({text: "Значения должны быть положительным числом", icon: "warning", button: "Понятно"});
           }
           else swal({text: "Необходимо ввести показатель гибкости", icon: "warning", button: "Ага"});
           break;
         case 6:
           if (this.stats.rapidity != null) {
-            this.incProgressBar();
-            this.frameShow++;
+            if (isFinite(this.stats.rapidity) && this.stats.rapidity > 0){
+              this.incProgressBar();
+              this.frameShow++;
+            }
+            else swal({text: "Значения должны быть положительным числом", icon: "warning", button: "Понятно"});
           }
           else swal({text: "Необходимо ввести показатель быстроты", icon: "warning", button: "Ага"});
           break;
         case 7:
           if (this.stats.strength != null) {
-            this.incProgressBar();
-            this.frameShow++;
+            if (isFinite(this.stats.strength) && this.stats.strength > 0){
+              this.incProgressBar();
+              this.frameShow++;
+            }
+            else swal({text: "Значения должны быть положительным числом", icon: "warning", button: "Понятно"});
           }
           else swal({text: "Необходимо ввести показатель динамической силы", icon: "warning", button: "Ага"});
           break;
         case 8:
           if (this.stats.rate != null) {
-            this.incProgressBar();
-            this.frameShow++;
+            if (isFinite(this.stats.rate) && this.stats.rate > 0){
+              this.incProgressBar();
+              this.frameShow++;
+            }
+            else swal({text: "Значения должны быть положительным числом", icon: "warning", button: "Понятно"});
           }
           else swal({text: "Необходимо ввести показатель скоростной выносливости", icon: "warning", button: "Ага"});
           break;
         case 9:
           if (this.stats.rateStrength != null) {
-            this.incProgressBar();
-            this.frameShow++;
+            if (isFinite(this.stats.rateStrength) && this.stats.rateStrength > 0){
+              this.incProgressBar();
+              this.frameShow++;
+            }
+            else swal({text: "Значения должны быть положительным числом", icon: "warning", button: "Понятно"});
           }
           else swal({text: "Необходимо ввести показатель скоростно-силовой выносливости", icon: "warning", button: "Ага"});
           break;
