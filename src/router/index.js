@@ -26,7 +26,7 @@ export default new Router({
   routes: [
     {path: '/', name: 'Home', component: Home},
     {path: '/void', name: 'Void', component: Void},
-    {path: '/test', name: 'Test', component: Test,
+    {path: '/test', component: Test,
      children: [
        {path: '', name: 'Step0', component: Step0},
        {path: 'step-one', name: 'Step1', component: Step1},
