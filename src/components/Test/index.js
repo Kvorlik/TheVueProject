@@ -1,33 +1,10 @@
 import db from "@/firebase/init";
 import swal from "sweetalert";
-import Step0 from "./Step0";
-import Step1 from "./Step1";
-import Step2 from "./Step2";
-import Step3 from "./Step3";
-import Step4 from "./Step4";
-import Step5 from "./Step5";
-import Step6 from "./Step6";
-import Step7 from "./Step7";
-import Step8 from "./Step8";
-import Step9 from "./Step9";
 
 export default {
   name: 'test',
-  components: {
-    Step0,
-    Step1,
-    Step2,
-    Step3,
-    Step4,
-    Step5,
-    Step6,
-    Step7,
-    Step8,
-    Step9
-  },
   data() {
     return {
-      frameShow: 0,
       isSelected: null,
       progressPercents: 0,
       backgrounds: {
@@ -75,7 +52,7 @@ export default {
         case 0:
           if (this.stats.gender == "man" || this.stats.gender == "woman") {
             this.incProgressBar();
-            this.frameShow++;
+            router.push({path: 'step-one'});
           }
           else swal({text: "Выберите пол", icon: "warning", button: "Ага"});
           break;
@@ -85,7 +62,7 @@ export default {
                 isFinite(this.stats.height) && this.stats.height > 0 &&
                 isFinite(this.stats.weight) && this.stats.weight > 0){
               this.incProgressBar();
-              this.frameShow++;
+              router.push({path: 'step-two'});
             }
             else swal({text: "Значения должны быть положительным числом", icon: "warning", button: "Понятно"});
           }
@@ -95,7 +72,7 @@ export default {
           if (this.stats.circle != null) {
             if (isFinite(this.stats.circle) && this.stats.circle > 0){
               this.incProgressBar();
-              this.frameShow++;
+              router.push({path: 'step-three'});
             }
             else swal({text: "Значения должны быть положительным числом", icon: "warning", button: "Понятно"});
           }
@@ -105,7 +82,7 @@ export default {
           if (this.stats.pulse != null) {
             if (isFinite(this.stats.pulse) && this.stats.pulse > 0){
               this.incProgressBar();
-              this.frameShow++;
+              router.push({path: 'step-four'});
             }
             else swal({text: "Значения должны быть положительным числом", icon: "warning", button: "Понятно"});
           }
@@ -116,7 +93,7 @@ export default {
             if (isFinite(this.stats.systole) && this.stats.systole > 0 &&
                 isFinite(this.stats.diastole) && this.stats.diastole > 0){
               this.incProgressBar();
-              this.frameShow++;
+              router.push({path: 'step-five'});
             }
             else swal({text: "Значения должны быть положительным числом", icon: "warning", button: "Понятно"});
           }
@@ -126,7 +103,7 @@ export default {
           if (this.stats.flexibility != null) {
             if (isFinite(this.stats.flexibility) && this.stats.flexibility > 0){
               this.incProgressBar();
-              this.frameShow++;
+              router.push({path: 'step-six'});
             }
             else swal({text: "Значения должны быть положительным числом", icon: "warning", button: "Понятно"});
           }
@@ -136,7 +113,7 @@ export default {
           if (this.stats.rapidity != null) {
             if (isFinite(this.stats.rapidity) && this.stats.rapidity > 0){
               this.incProgressBar();
-              this.frameShow++;
+              router.push({path: 'step-seven'});
             }
             else swal({text: "Значения должны быть положительным числом", icon: "warning", button: "Понятно"});
           }
@@ -146,7 +123,7 @@ export default {
           if (this.stats.strength != null) {
             if (isFinite(this.stats.strength) && this.stats.strength > 0){
               this.incProgressBar();
-              this.frameShow++;
+              router.push({path: 'step-eight'});
             }
             else swal({text: "Значения должны быть положительным числом", icon: "warning", button: "Понятно"});
           }
@@ -156,7 +133,7 @@ export default {
           if (this.stats.rate != null) {
             if (isFinite(this.stats.rate) && this.stats.rate > 0){
               this.incProgressBar();
-              this.frameShow++;
+              router.push({path: 'step-nine'});
             }
             else swal({text: "Значения должны быть положительным числом", icon: "warning", button: "Понятно"});
           }
@@ -166,14 +143,14 @@ export default {
           if (this.stats.rateStrength != null) {
             if (isFinite(this.stats.rateStrength) && this.stats.rateStrength > 0){
               this.incProgressBar();
-              this.frameShow++;
+              router.push({path: 'result'});
             }
             else swal({text: "Значения должны быть положительным числом", icon: "warning", button: "Понятно"});
           }
           else swal({text: "Необходимо ввести показатель скоростно-силовой выносливости", icon: "warning", button: "Ага"});
           break;
         default:
-          swal({text: "Error. frameShow = " + this.frameShow, icon: "error", button: "Ага"});
+          swal({text: "Error. Path = " + this.$router.path + ". Пожалуйста, свяжитесь с разработчиком.", icon: "error", button: "Ага"});
       }
     },
 
