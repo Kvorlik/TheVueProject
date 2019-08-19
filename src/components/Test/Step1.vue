@@ -29,6 +29,18 @@
 
 <script>
 export default {
+  data () {
+    return {
+      stats: {
+        age: null,
+        height: null,
+        weight: null
+      }
+    }
+  },
+  beforeUpdate() {
+    this.$store.dispatch('changeAgeHeightWeight', this.stats);
+  }
 }
 </script>
 

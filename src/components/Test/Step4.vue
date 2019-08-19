@@ -17,5 +17,18 @@
 
 <script>
 export default {
+  data() {
+    return {
+      stats: {
+        systole: null,
+        diastole: null
+      }
+    }
+  },
+  beforeUpdate() {
+    this.$store.dispatch('changePressure', this.stats);
+  }
 }
 </script>
+
+<style scoped src="./styles.css"></style>

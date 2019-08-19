@@ -7,12 +7,22 @@
     </a>
     <div class="flex column-flex frame-picture">
       <img src="@/assets/test/img4.png">
-      <input type="text" v-model="stats.pulse" placeholder="Пульс, уд/мин">
+      <input type="text" v-model="pulse" placeholder="Пульс, уд/мин">
     </div>
   </div>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      pulse: null
+    }
+  },
+  beforeUpdate() {
+    this.$store.dispatch('changePulse', this.pulse);
+  }
 }
 </script>
+
+<style scoped src="./styles.css"></style>

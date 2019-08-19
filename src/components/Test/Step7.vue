@@ -11,12 +11,22 @@
         шкалы как можно выше. Разница между значениями первого и второго касания характеризует высоту прыжка.
         Дается три попытки, засчитывается лучшая.
       </div>
-      <input type="text" v-model="stats.strength" placeholder="Значение ДС, см">
+      <input type="text" v-model="strength" placeholder="Значение ДС, см">
     </div>
   </div>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      strength: null
+    }
+  },
+  beforeUpdate() {
+    this.$store.dispatch('changeStrength', this.strength);
+  }
 }
 </script>
+
+<style scoped src="./styles.css"></style>

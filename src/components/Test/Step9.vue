@@ -6,12 +6,22 @@
       <div align="justify">
         Измеряется максимальная частота сгибания рук в упоре лежа (женщины в упоре на коленях) за 30 секунд.
       </div>
-      <input type="text" v-model="stats.rateStrength" placeholder="Значение ССВ, раз">
+      <input type="text" v-model="rateStrength" placeholder="Значение ССВ, раз">
     </div>
   </div>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      rateStrength: null
+    }
+  },
+  beforeUpdate() {
+    this.$store.dispatch('changeRateStrength', this.rateStrength);
+  }
 }
 </script>
+
+<style scoped src="./styles.css"></style>

@@ -12,12 +12,22 @@
         Измеряется расстояние в сантиметрах от нижнего края ладони до нулевой отметки линейки.
         Тест проводится три раза подряд, засчитывается лучший результат.
       </div>
-      <input type="text" v-model="stats.rapidity" placeholder="Показатель быстроты, см">
+      <input type="text" v-model="rapidity" placeholder="Показатель быстроты, см">
     </div>
   </div>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      rapidity: null
+    }
+  },
+  beforeUpdate() {
+    this.$store.dispatch('changeRapidity', this.rapidity);
+  }
 }
 </script>
+
+<style scoped src="./styles.css"></style>

@@ -2,11 +2,21 @@
   <div>
     Выберите ваш пол:
     <div class="wrapper flex">
-      <div class="container flex" :class="{ shadow: isSelected != 'man', selected: isSelected == 'man' }" @click="$emit('gender-choice', 'man')">
+      <div class="container flex"
+          :class="{
+            shadow: this.$store.getters.getState.isSelected !== 'man',
+            selected: this.$store.getters.getState.isSelected === 'man'
+            }"
+          @click="$store.dispatch('genderChoice', 'man')">
         <img src="@/assets/test/Man.png">
         <div class="link-button shadow offset flex">Мужской</div>
       </div>
-      <div class="container flex" :class="{ shadow: isSelected != 'woman', selected: isSelected == 'woman' }" @click="$emit('gender-choice', 'woman')">
+      <div class="container flex"
+          :class="{
+            shadow: this.$store.getters.getState.isSelected !== 'woman',
+            selected: this.$store.getters.getState.isSelected === 'woman'
+            }"
+          @click="$store.dispatch('genderChoice', 'woman')">
         <img src="@/assets/test/Woman.png">
         <div class="link-button shadow offset flex">Женский</div>
       </div>
@@ -15,9 +25,7 @@
 </template>
 
 <script>
-export default {
-  props: ['isSelected']
-}
+export default {}
 </script>
 
 <style scoped src="./styles.css"></style>

@@ -1,20 +1,33 @@
 <template>
-  <div class="test shadow" :class="backgrounds">
+  <div class="test shadow" :class="{ wristbg: isStepTwo, forestbg: isResultStep }">
     <div class="progressbar"/>
     <div class="content-area">
-      <h1 class="main-header" v-if="frameShow < 10">Подготовка к тренировке</h1>
-      <h1 class="main-header" v-if="frameShow == 10">Результаты</h1>
+      <h1 class="main-header" v-if="$route.name != 'Result'">Подготовка к тренировке</h1>
+      <h1 class="main-header" v-if="$route.name === 'Result'">Результаты</h1>
 
       <router-view/>
 
       <div class="flex">
-        <div class="link-button shadow flex" v-if="frameShow < 10" @click="isFilled(frameShow)">Далее</div>
-        <div class="link-button shadow flex" v-if="frameShow == 10" @click="end()">Закончить</div>
+        <div class="link-button shadow flex" v-if="$route.name != 'Result'" @click="$store.dispatch('isFilled', $route.name)">Далее</div>
+        <div class="link-button shadow flex" v-if="$route.name === 'Result'" @click="$store.dispatch('end')">Закончить</div>
       </div>
     </div>
   </div>
 </template>
 
-<script type="text/javascript" src="./index.js"/>
+<script>
+export default {
+  data() {
+    return {
+      isStepTwo: false,
+      isResultStep: false
+    }
+  },
+  beforeUpdate() {
+    this.isStepTwo = (this.$route.name === 'Step2') ? true : false;
+    this.isResultStep = (this.$route.name === 'Result') ? true : false;
+  }
+}
+</script>
 
 <style scoped src="./styles.css"></style>
