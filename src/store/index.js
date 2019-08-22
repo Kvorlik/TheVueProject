@@ -71,6 +71,10 @@ export default new Vuex.Store({
     setRateStrength(state, value) {
       state.stats.rateStrength = value;
     },
+    flushSelectAndProgress(state) {
+      state.isSelected = null;
+      state.progressPercents = 0;
+    }
   },
 
   getters: {
@@ -118,6 +122,10 @@ export default new Vuex.Store({
 
     changeRateStrength(context, value){
       context.commit('setRateStrength', value);
+    },
+
+    initFlush(context){
+      context.commit('flushSelectAndProgress');
     },
 
     incProgressBar(context) {

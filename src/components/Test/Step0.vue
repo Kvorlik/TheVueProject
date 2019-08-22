@@ -25,7 +25,11 @@
 </template>
 
 <script>
-export default {}
+export default {
+  mounted() {
+    this.$store.dispatch('initFlush');
+  }
+}
 </script>
 
 <style scoped src="./styles.css"></style>
