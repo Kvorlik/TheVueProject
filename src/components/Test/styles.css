@@ -140,11 +140,19 @@ input[type="text"]{
   vertical-align: middle;
 }
 
+.frame-picture img{
+  height: 40vh;
+  margin: 15px 0;
+}
+
+.frame-text{
+  width: 100%;
+}
+
 .result-strings{ margin: 15px 0; }
 .relative{ position: relative; }
 .input-container{ margin: 0; }
 .painted{ color: #ff9900; }
-.frame-picture img{ height: 40vh; }
 .column-flex{ flex-direction: column; }
 .wrapper{ margin: 40px 0 50px; }
 .offset{ margin-top: -10px; }

@@ -4,9 +4,9 @@
     Для правильного измерения ознакомьтесь с
     <a href="http://tiny.cc/u9686y" target="_blank">
       <span class="painted">инструкцией</span>
-    </a>
+    </a>.
     <div class="flex column-flex frame-picture">
-      <img src="@/assets/test/tonometer.jpg">
+      <img src="@/assets/test/blood-pressure.png">
       <div class="flex column-flex">
         <input type="text" v-model="stats.systole" placeholder="Систола, мм рт.ст.">
         <input type="text" v-model="stats.diastole" placeholder="Диастола, мм.рт.ст.">

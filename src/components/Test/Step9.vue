@@ -1,12 +1,12 @@
 <template>
   <div>
-    Измерение скоростно-силовой выносливости:
+    Отжимания:
     <div class="flex column-flex frame-picture">
-    <img src="@/assets/test/man1.png">
-      <div align="justify">
-        Измеряется максимальная частота сгибания рук в упоре лежа (женщины в упоре на коленях) за 30 секунд.
+      <img src="@/assets/test/push-ups.png">
+      <div class="frame-text">
+        Расскажите, сколько вы отжимаетесь за 30 секунд? Женщины в упоре на коленях.
       </div>
-      <input type="text" v-model="rateStrength" placeholder="Значение ССВ, раз">
+      <input type="text" v-model="rateStrength" placeholder="Количество отжиманий">
     </div>
   </div>
 </template>

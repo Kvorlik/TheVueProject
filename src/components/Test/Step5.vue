@@ -2,10 +2,9 @@
   <div>
     Измерьте гибкость:
     <div class="flex column-flex frame-picture">
-      <img src="@/assets/test/flexibility.jpg">
-      <div align="justify">
-        Стоя на ступеньке с выпрямленными в коленях ногами, выполняется наклон вперед с
-        касанием отметки ниже или выше нулевой точки.
+      <img src="@/assets/test/flexibility.png">
+      <div class="frame-text">
+        Наклонитесь вперед с касанием отметки ниже или выше нулевой точки.
       </div>
       <input type="text" v-model="flexibility" placeholder="Значение гибкости, см">
     </div>
