@@ -142,7 +142,7 @@ export default new Vuex.Store({
             context.dispatch('incProgressBar');
             router.push({path: 'step-one'});
           }
-          else swal({text: "Выберите пол", icon: "warning", button: "Ага"});
+          else swal({text: "Выберите пол", icon: "warning", button: "Хорошо"});
           break;
         case 'Step1':
           if (stats.age != null && stats.height != null && stats.weight != null) {
@@ -154,7 +154,7 @@ export default new Vuex.Store({
             }
             else swal({text: "Значения должны быть положительным числом", icon: "warning", button: "Понятно"});
           }
-          else swal({text: "Необходимо заполнить все поля", icon: "warning", button: "Ага"});
+          else swal({text: "Необходимо заполнить все поля", icon: "warning", button: "Окей"});
           break;
         case 'Step2':
           if (stats.circle != null) {
@@ -164,7 +164,7 @@ export default new Vuex.Store({
             }
             else swal({text: "Значения должны быть положительным числом", icon: "warning", button: "Понятно"});
           }
-          else swal({text: "Необходимо ввести окружность", icon: "warning", button: "Ага"});
+          else swal({text: "Необходимо ввести окружность", icon: "warning", button: "Понятно"});
           break;
         case 'Step3':
           if (stats.pulse != null) {
@@ -174,7 +174,7 @@ export default new Vuex.Store({
             }
             else swal({text: "Значения должны быть положительным числом", icon: "warning", button: "Понятно"});
           }
-          else swal({text: "Необходимо ввести пульс", icon: "warning", button: "Ага"});
+          else swal({text: "Необходимо ввести пульс", icon: "warning", button: "Ясно"});
           break;
         case 'Step4':
           if (stats.systole != null && stats.diastole != null) {
@@ -185,7 +185,7 @@ export default new Vuex.Store({
             }
             else swal({text: "Значения должны быть положительным числом", icon: "warning", button: "Понятно"});
           }
-          else swal({text: "Необходимо ввести артериальное давление", icon: "warning", button: "Ага"});
+          else swal({text: "Необходимо ввести артериальное давление", icon: "warning", button: "Окей"});
           break;
         case 'Step5':
           if (stats.flexibility != null) {
@@ -195,7 +195,7 @@ export default new Vuex.Store({
             }
             else swal({text: "Значения должны быть положительным числом", icon: "warning", button: "Понятно"});
           }
-          else swal({text: "Необходимо ввести показатель гибкости", icon: "warning", button: "Ага"});
+          else swal({text: "Необходимо ввести показатель гибкости", icon: "warning", button: "Хорошо"});
           break;
         case 'Step6':
           if (stats.rapidity != null) {
@@ -205,7 +205,7 @@ export default new Vuex.Store({
             }
             else swal({text: "Значения должны быть положительным числом", icon: "warning", button: "Понятно"});
           }
-          else swal({text: "Необходимо ввести показатель быстроты", icon: "warning", button: "Ага"});
+          else swal({text: "Необходимо ввести показатель быстроты", icon: "warning", button: "Понятно"});
           break;
         case 'Step7':
           if (stats.strength != null) {
@@ -215,7 +215,7 @@ export default new Vuex.Store({
             }
             else swal({text: "Значения должны быть положительным числом", icon: "warning", button: "Понятно"});
           }
-          else swal({text: "Необходимо ввести показатель динамической силы", icon: "warning", button: "Ага"});
+          else swal({text: "Необходимо ввести показатель динамической силы", icon: "warning", button: "Ясно"});
           break;
         case 'Step8':
           if (stats.rate != null) {
@@ -225,7 +225,7 @@ export default new Vuex.Store({
             }
             else swal({text: "Значения должны быть положительным числом", icon: "warning", button: "Понятно"});
           }
-          else swal({text: "Необходимо ввести показатель скоростной выносливости", icon: "warning", button: "Ага"});
+          else swal({text: "Необходимо ввести показатель скоростной выносливости", icon: "warning", button: "Окей"});
           break;
         case 'Step9':
           if (stats.rateStrength != null) {
@@ -235,10 +235,10 @@ export default new Vuex.Store({
             }
             else swal({text: "Значения должны быть положительным числом", icon: "warning", button: "Понятно"});
           }
-          else swal({text: "Необходимо ввести показатель скоростно-силовой выносливости", icon: "warning", button: "Ага"});
+          else swal({text: "Необходимо ввести показатель скоростно-силовой выносливости", icon: "warning", button: "Хорошо"});
           break;
         default:
-          swal({text: "Error. Path = " + router.path + ". Пожалуйста, свяжитесь с разработчиком.", icon: "error", button: "Ага"});
+          swal({text: "Error. Path = " + router.path + ". Пожалуйста, свяжитесь с разработчиком.", icon: "error", button: "Закрыть"});
       }
     },
 
