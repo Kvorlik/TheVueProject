@@ -27,13 +27,6 @@ body {
 }
 
 * {
-  /* font-family: Roboto,Helvetica,Arial,sans-serif;
-  font-weight: normal;
-  letter-spacing: normal; */
-  /* font-family: 'Raleway', 'RalewayOffline', sans-serif;
-  font-weight: 500;
-  letter-spacing: 2px; */
-  /* font-family: 'Comfortaa', cursive; */
   font-family: 'Exo 2', sans-serif;
 }
 
@@ -49,5 +42,18 @@ a {
   text-decoration: none;
   outline: 0;
   color: white;
+}
+
+.swal-button{
+  background-color: #ff9900;
+}
+
+.swal-button:not([disabled]):hover{
+  background-color: #ff9900;
+  color: black;
+}
+
+.swal-text{
+  font-size: 20px;
 }
 </style>
