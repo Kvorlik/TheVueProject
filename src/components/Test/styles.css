@@ -140,6 +140,11 @@ input[type="text"]{
   vertical-align: middle;
 }
 
+.painted{
+  color: #ff9900;
+  cursor: pointer;
+}
+
 .frame-picture img{
   height: 40vh;
   margin: 15px 0;
@@ -152,7 +157,6 @@ input[type="text"]{
 .result-strings{ margin: 15px 0; }
 .relative{ position: relative; }
 .input-container{ margin: 0; }
-.painted{ color: #ff9900; }
 .column-flex{ flex-direction: column; }
 .wrapper{ margin: 40px 0 50px; }
 .offset{ margin-top: -10px; }

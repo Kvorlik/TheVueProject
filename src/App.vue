@@ -44,11 +44,11 @@ a {
   color: white;
 }
 
-.swal-button{
+.swal-button--confirm{
   background-color: #ff9900;
 }
 
-.swal-button:not([disabled]):hover{
+.swal-button--confirm:not([disabled]):hover{
   background-color: #ff9900;
   color: black;
 }
