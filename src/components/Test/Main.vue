@@ -23,9 +23,18 @@ export default {
       isResultStep: false
     }
   },
+  mounted() {
+    window.scrollTo({top: 0});
+    document.querySelector('.content-area').addEventListener('keypress', e => {
+      if (e.keyCode === 13) this.$store.dispatch('isFilled', this.$route.name);
+    });
+  },
   beforeUpdate() {
     this.isStepTwo = (this.$route.name === 'Step2') ? true : false;
     this.isResultStep = (this.$route.name === 'Result') ? true : false;
+  },
+  watch: {
+    $route: () => window.scrollTo({top: 0, behavior: 'smooth'})
   }
 }
 </script>
