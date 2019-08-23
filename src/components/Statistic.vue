@@ -11,7 +11,7 @@
           <h4>Уровень физической подготовки</h4>
           <canvas class="physical-level"/>
         </div>
-        <div class="link-button shadow" @click="goBack">Назад</div>
+        <div class="link-button shadow" @click="$router.go(-1)">Назад</div>
       </div>
     </div>
   </div>
@@ -40,8 +40,6 @@ export default {
     }
   },
   methods: {
-    goBack() { this.$router.go(-1); },
-
     createBodyTypeGraph(){
       let target = document.querySelector(".body-type");
       new Chart(target, {
@@ -102,6 +100,7 @@ export default {
     }
   },
   created(){
+    window.scrollTo({top: 0});
     db.collection('user-statistics').get()
       .then(snapshot => {
         snapshot.forEach(doc => {

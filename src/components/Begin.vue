@@ -27,7 +27,7 @@
         для контроля изменения состояния своего организма в процессе тренировок.
       </p>
       <div class="flex">
-        <div class="link-button shadow" @click="goBack">Назад</div>
+        <div class="link-button shadow" @click="$router.go(-1)">Назад</div>
       </div>
     </div>
   </div>
@@ -36,10 +36,8 @@
 <script>
 export default {
   name: 'begin',
-  methods: {
-    goBack() {
-      this.$router.go(-1)
-    }
+  created() {
+    window.scrollTo({top: 0});
   }
 }
 </script>

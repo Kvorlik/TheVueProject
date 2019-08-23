@@ -47,7 +47,7 @@ export default {
     }
   },
   created(){
-    //получение данных с firestore
+    window.scrollTo({top: 0});
     db.collection('exercises').get()
       .then(snapshot => {
         snapshot.forEach(doc => {
