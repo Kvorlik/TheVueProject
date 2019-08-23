@@ -134,9 +134,9 @@ export default new Vuex.Store({
       progress.style.width = context.state.progressPercents + '%';
     },
 
-    isFilled(context, value) {
+    isFilled(context, routeName) {
       let stats = context.getters.getState.stats;
-      switch (value) {
+      switch (routeName) {
         case 'Step0':
           if (stats.gender === 'man' || stats.gender === 'woman') {
             context.dispatch('incProgressBar');
@@ -238,7 +238,7 @@ export default new Vuex.Store({
           else swal({text: "Необходимо ввести количество отжиманий", icon: "warning", button: "Хорошо"});
           break;
         default:
-          swal({text: "Error. Path = " + router.path + ". Пожалуйста, свяжитесь с разработчиком.", icon: "error", button: "Закрыть"});
+          swal({text: "Error. Name = " + routeName + ". Пожалуйста, свяжитесь с разработчиком.", icon: "error", button: "Закрыть"});
       }
     },
 
