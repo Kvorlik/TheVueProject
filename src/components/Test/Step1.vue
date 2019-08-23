@@ -7,7 +7,7 @@
         <div class="label flex">
           <span>Возраст</span>
         </div>
-        <input type="text" v-model="stats.age" placeholder="Лет">
+        <input type="text" v-model="stats.age" placeholder="Лет" id="autofocus">
       </div>
       <div class="container flex input-container square-input">
         <img src="@/assets/test/img2.png">
@@ -37,6 +37,9 @@ export default {
         weight: null
       }
     }
+  },
+  mounted() {
+    document.querySelector('#autofocus').focus();
   },
   beforeUpdate() {
     this.$store.dispatch('changeAgeHeightWeight', this.stats);

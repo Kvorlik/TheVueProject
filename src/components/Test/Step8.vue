@@ -7,7 +7,7 @@
         Подсчитывается максимальная частота поднимания
         прямых ног до угла 90° за 20 секунд.
       </div>
-      <input type="text" v-model="rate" placeholder="Количество выполнений">
+      <input type="text" v-model="rate" placeholder="Количество выполнений" id="autofocus">
     </div>
   </div>
 </template>
@@ -18,6 +18,9 @@ export default {
     return {
       rate: null
     }
+  },
+  mounted() {
+    document.querySelector('#autofocus').focus();
   },
   beforeUpdate() {
     this.$store.dispatch('changeRate', this.rate);

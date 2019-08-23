@@ -8,7 +8,7 @@
     <div class="flex column-flex frame-picture">
       <img src="@/assets/test/blood-pressure.png">
       <div class="flex column-flex">
-        <input type="text" v-model="stats.systole" placeholder="Систола, мм рт.ст.">
+        <input type="text" v-model="stats.systole" placeholder="Систола, мм рт.ст." id="autofocus">
         <input type="text" v-model="stats.diastole" placeholder="Диастола, мм.рт.ст.">
       </div>
     </div>
@@ -24,6 +24,9 @@ export default {
         diastole: null
       }
     }
+  },
+  mounted() {
+    document.querySelector('#autofocus').focus();
   },
   beforeUpdate() {
     this.$store.dispatch('changePressure', this.stats);

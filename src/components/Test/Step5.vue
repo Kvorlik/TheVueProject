@@ -6,7 +6,7 @@
       <div class="frame-text">
         Наклонитесь вперед с касанием отметки ниже или выше нулевой точки.
       </div>
-      <input type="text" v-model="flexibility" placeholder="Значение гибкости, см">
+      <input type="text" v-model="flexibility" placeholder="Значение гибкости, см" id="autofocus">
     </div>
   </div>
 </template>
@@ -17,6 +17,9 @@ export default {
     return {
       flexibility: null
     }
+  },
+  mounted() {
+    document.querySelector('#autofocus').focus();
   },
   beforeUpdate() {
     this.$store.dispatch('changeFlexibility', this.flexibility);

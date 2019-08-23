@@ -8,7 +8,7 @@
         Затем прыгните вверх и каснитесь измерительной шкалы как можно выше.<br>
         Разница между первым и вторым касаниями - высота вашего прыжка.
       </div>
-      <input type="text" v-model="strength" placeholder="Высота, см">
+      <input type="text" v-model="strength" placeholder="Высота, см" id="autofocus">
     </div>
   </div>
 </template>
@@ -19,6 +19,9 @@ export default {
     return {
       strength: null
     }
+  },
+  mounted() {
+    document.querySelector('#autofocus').focus();
   },
   beforeUpdate() {
     this.$store.dispatch('changeStrength', this.strength);

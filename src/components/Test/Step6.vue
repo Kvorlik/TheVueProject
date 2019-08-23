@@ -6,7 +6,7 @@
       <div class="frame-text">
         Задача: как можно быстрее большим и указательным пальцами схватить падающую сверху линейку.
       </div>
-      <input type="text" v-model="rapidity" placeholder="Показатель быстроты, см">
+      <input type="text" v-model="rapidity" placeholder="Показатель быстроты, см" id="autofocus">
     </div>
   </div>
 </template>
@@ -17,6 +17,9 @@ export default {
     return {
       rapidity: null
     }
+  },
+  mounted() {
+    document.querySelector('#autofocus').focus();
   },
   beforeUpdate() {
     this.$store.dispatch('changeRapidity', this.rapidity);
