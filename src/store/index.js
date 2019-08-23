@@ -225,7 +225,7 @@ export default new Vuex.Store({
             }
             else swal({text: "Значения должны быть положительным числом", icon: "warning", button: "Понятно"});
           }
-          else swal({text: "Необходимо ввести показатель скоростной выносливости", icon: "warning", button: "Окей"});
+          else swal({text: "Необходимо ввести высоту прыжка", icon: "warning", button: "Окей"});
           break;
         case 'Step9':
           if (stats.rateStrength != null) {
@@ -235,7 +235,7 @@ export default new Vuex.Store({
             }
             else swal({text: "Значения должны быть положительным числом", icon: "warning", button: "Понятно"});
           }
-          else swal({text: "Необходимо ввести показатель скоростно-силовой выносливости", icon: "warning", button: "Хорошо"});
+          else swal({text: "Необходимо ввести количество отжиманий", icon: "warning", button: "Хорошо"});
           break;
         default:
           swal({text: "Error. Path = " + router.path + ". Пожалуйста, свяжитесь с разработчиком.", icon: "error", button: "Закрыть"});
