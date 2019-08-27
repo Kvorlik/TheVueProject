@@ -47,7 +47,7 @@
         Хотите узнать уровень своей физической подготовки?
         Наш тест поможет вам сделать это!
         <div class="button-wrap">
-          <router-link to="/test">
+          <router-link :to="{name: 'Step0'}">
             <div class="link-button flex shadow">Начать тест</div>
           </router-link>
         </div>

@@ -20,7 +20,7 @@
         <img src="../assets/need/cross.png">Пренебрегать разминкой<br>
       </ul>
       <div class="flex">
-        <div class="link-button shadow" @click="goBack">Назад</div>
+        <div class="link-button shadow" @click="$router.go(-1)">Назад</div>
       </div>
     </div>
   </div>
@@ -29,10 +29,8 @@
 <script>
 export default {
   name: 'need',
-  methods: {
-    goBack() {
-      this.$router.go(-1)
-    }
+  created() {
+    window.scrollTo({top: 0});
   }
 }
 </script>

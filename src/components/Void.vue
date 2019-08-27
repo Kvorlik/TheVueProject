@@ -19,10 +19,10 @@
       Страница не существует
       <div class="nav-buttons">
         <div class="button-wrap">
-          <div class="link-button shadow" @click="goHome">Главная</div>
+          <div class="link-button shadow" @click="$router.push({ name: 'Home' })">Главная</div>
         </div>
         <div class="button-wrap">
-          <div class="link-button shadow" @click="goBack">Назад</div>
+          <div class="link-button shadow" @click="$router.go(-1)">Назад</div>
         </div>
       </div>
     </div>
@@ -32,13 +32,8 @@
 <script>
 export default {
   name: 'notfound',
-  methods: {
-    goHome() {
-      this.$router.push({ name: 'Home' })
-    },
-    goBack() {
-      this.$router.go(-1)
-    }
+  created() {
+    window.scrollTo({top: 0});
   }
 }
 </script>
