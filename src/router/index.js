@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import store from '@/store'
 import Home from '@/components/Home'
 import Void from '@/components/Void'
 import Test from '@/components/Test/Main'
@@ -19,7 +20,12 @@ import Need from '@/components/Need'
 import Statistic from '@/components/Statistic'
 import Training from '@/components/Training'
 
-Vue.use(Router)
+Vue.use(Router);
+
+const catchBeginNotFromStart = (to, from, next) => {
+  if (store.getters.getState.isSelected) next();
+  else next({name: 'Step0'});
+}
 
 export default new Router({
   mode: 'history',
@@ -29,16 +35,16 @@ export default new Router({
     {path: '/test', component: Test,
      children: [
        {path: '', name: 'Step0', component: Step0},
-       {path: 'step-one', name: 'Step1', component: Step1},
-       {path: 'step-two', name: 'Step2', component: Step2},
-       {path: 'step-three', name: 'Step3', component: Step3},
-       {path: 'step-four', name: 'Step4', component: Step4},
-       {path: 'step-five', name: 'Step5', component: Step5},
-       {path: 'step-six', name: 'Step6', component: Step6},
-       {path: 'step-seven', name: 'Step7', component: Step7},
-       {path: 'step-eight', name: 'Step8', component: Step8},
-       {path: 'step-nine', name: 'Step9', component: Step9},
-       {path: 'result', name: 'Result', component: Result},
+       {path: 'step-one', name: 'Step1', component: Step1, beforeEnter: (to, from, next) => catchBeginNotFromStart(to, from, next)},
+       {path: 'step-two', name: 'Step2', component: Step2, beforeEnter: (to, from, next) => catchBeginNotFromStart(to, from, next)},
+       {path: 'step-three', name: 'Step3', component: Step3, beforeEnter: (to, from, next) => catchBeginNotFromStart(to, from, next)},
+       {path: 'step-four', name: 'Step4', component: Step4, beforeEnter: (to, from, next) => catchBeginNotFromStart(to, from, next)},
+       {path: 'step-five', name: 'Step5', component: Step5, beforeEnter: (to, from, next) => catchBeginNotFromStart(to, from, next)},
+       {path: 'step-six', name: 'Step6', component: Step6, beforeEnter: (to, from, next) => catchBeginNotFromStart(to, from, next)},
+       {path: 'step-seven', name: 'Step7', component: Step7, beforeEnter: (to, from, next) => catchBeginNotFromStart(to, from, next)},
+       {path: 'step-eight', name: 'Step8', component: Step8, beforeEnter: (to, from, next) => catchBeginNotFromStart(to, from, next)},
+       {path: 'step-nine', name: 'Step9', component: Step9, beforeEnter: (to, from, next) => catchBeginNotFromStart(to, from, next)},
+       {path: 'result', name: 'Result', component: Result, beforeEnter: (to, from, next) => catchBeginNotFromStart(to, from, next)},
      ]
     },
     {path: '/where-to-begin', name: 'Begin', component: Begin},
