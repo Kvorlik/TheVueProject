@@ -103,7 +103,7 @@ export default {
   bottom: 0;
   right: 0;
   position: absolute;
-  width: 0%;
+  width: 0;
   height: 2px;
   background-color: black;
   transition: .5s;
@@ -125,10 +125,10 @@ export default {
 .button-text::before{
   content: '';
   position: absolute;
-  top: 0%;
-  right: 0%;
-  bottom: 0%;
-  left: 0%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   border: solid 2px;
   border-radius: 50%;
   transition: .5s;
@@ -138,10 +138,10 @@ export default {
 .button-text::after{
   content: '';
   position: absolute;
-  top: 0%;
-  right: 0%;
-  bottom: 0%;
-  left: 0%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   border: solid 2px;
   border-radius: 50%;
   transition: .5s;

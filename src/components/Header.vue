@@ -121,7 +121,7 @@ export default {
 }
 
 .headersubtitle {
-  right: 0px;
+  right: 0;
   font-size: 25px;
   font-family: 'Pacifico', cursive;
 }
@@ -136,7 +136,7 @@ export default {
   bottom: 0;
   right: 0;
   position: absolute;
-  width: 0%;
+  width: 0;
   height: 2px;
   background-color: white;
   transition: .5s;

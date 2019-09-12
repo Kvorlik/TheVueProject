@@ -106,7 +106,7 @@ export default {
 .link-button:hover{
   cursor: pointer;
   box-shadow:
-  0 3px 6px 0px rgba(255,3,3,.5),
+  0 3px 6px 0 rgba(255,3,3,.5),
   0 3px 6px 6px rgba(255,3,3,.6);
   color: black;
   transform: translateY(-5px);

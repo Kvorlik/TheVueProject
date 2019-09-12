@@ -21,8 +21,8 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css?family=Exo+2');
 body {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   background-color: #eeeeee;
 }
 
