@@ -43,3 +43,8 @@ Here is the structure of collections:
 | physicalLvl | string |
 | pulseRange  | string |
 | weightType  | string |
+
+### Atomic design
+Now the project is in a refactoring state.  
+I am trying to learn and apply a component approach called atomic design.  
+You can [take a look at the plan](https://miro.com/app/board/o9J_kwxjFl4=/) of components in this project.
