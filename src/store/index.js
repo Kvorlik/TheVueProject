@@ -129,7 +129,7 @@ export default new Vuex.Store({
     },
 
     incProgressBar(context) {
-      let progress = document.querySelector('.progressbar');
+      let progress = document.querySelector('.progress-bar');
       context.commit('incProgressPercents');
       progress.style.width = context.state.progressPercents + '%';
     },
@@ -140,7 +140,7 @@ export default new Vuex.Store({
         case 'Step0':
           if (stats.gender === 'man' || stats.gender === 'woman') {
             context.dispatch('incProgressBar');
-            router.push({path: 'step-one'});
+            router.push({name: 'Step1'});
           }
           else swal({text: "Выберите пол", icon: "warning", button: "Хорошо"});
           break;
@@ -150,7 +150,7 @@ export default new Vuex.Store({
                 isFinite(stats.height) && stats.height > 0 &&
                 isFinite(stats.weight) && stats.weight > 0){
               context.dispatch('incProgressBar');
-              router.push({path: 'step-two'});
+              router.push({name: 'Step2'});
             }
             else swal({text: "Значения должны быть положительным числом", icon: "warning", button: "Понятно"});
           }
@@ -160,7 +160,7 @@ export default new Vuex.Store({
           if (stats.circle != null) {
             if (isFinite(stats.circle) && stats.circle > 0){
               context.dispatch('incProgressBar');
-              router.push({path: 'step-three'});
+              router.push({name: 'Step3'});
             }
             else swal({text: "Значения должны быть положительным числом", icon: "warning", button: "Понятно"});
           }
@@ -170,7 +170,7 @@ export default new Vuex.Store({
           if (stats.pulse != null) {
             if (isFinite(stats.pulse) && stats.pulse > 0){
               context.dispatch('incProgressBar');
-              router.push({path: 'step-four'});
+              router.push({name: 'Step4'});
             }
             else swal({text: "Значения должны быть положительным числом", icon: "warning", button: "Понятно"});
           }
@@ -181,7 +181,7 @@ export default new Vuex.Store({
             if (isFinite(stats.systole) && stats.systole > 0 &&
                 isFinite(stats.diastole) && stats.diastole > 0){
               context.dispatch('incProgressBar');
-              router.push({path: 'step-five'});
+              router.push({name: 'Step5'});
             }
             else swal({text: "Значения должны быть положительным числом", icon: "warning", button: "Понятно"});
           }
@@ -191,7 +191,7 @@ export default new Vuex.Store({
           if (stats.flexibility != null) {
             if (isFinite(stats.flexibility) && stats.flexibility > 0){
               context.dispatch('incProgressBar');
-              router.push({path: 'step-six'});
+              router.push({name: 'Step6'});
             }
             else swal({text: "Значения должны быть положительным числом", icon: "warning", button: "Понятно"});
           }
@@ -201,7 +201,7 @@ export default new Vuex.Store({
           if (stats.rapidity != null) {
             if (isFinite(stats.rapidity) && stats.rapidity > 0){
               context.dispatch('incProgressBar');
-              router.push({path: 'step-seven'});
+              router.push({name: 'Step7'});
             }
             else swal({text: "Значения должны быть положительным числом", icon: "warning", button: "Понятно"});
           }
@@ -211,7 +211,7 @@ export default new Vuex.Store({
           if (stats.strength != null) {
             if (isFinite(stats.strength) && stats.strength > 0){
               context.dispatch('incProgressBar');
-              router.push({path: 'step-eight'});
+              router.push({name: 'Step8'});
             }
             else swal({text: "Значения должны быть положительным числом", icon: "warning", button: "Понятно"});
           }
@@ -221,7 +221,7 @@ export default new Vuex.Store({
           if (stats.rate != null) {
             if (isFinite(stats.rate) && stats.rate > 0){
               context.dispatch('incProgressBar');
-              router.push({path: 'step-nine'});
+              router.push({name: 'Step9'});
             }
             else swal({text: "Значения должны быть положительным числом", icon: "warning", button: "Понятно"});
           }
@@ -231,7 +231,7 @@ export default new Vuex.Store({
           if (stats.rateStrength != null) {
             if (isFinite(stats.rateStrength) && stats.rateStrength > 0){
               context.dispatch('incProgressBar');
-              router.push({path: 'result'});
+              router.push({name: 'Result'});
             }
             else swal({text: "Значения должны быть положительным числом", icon: "warning", button: "Понятно"});
           }
@@ -263,6 +263,7 @@ export default new Vuex.Store({
         res = stats.height - 110;
       }
       else res = stats.height - 100;
+      if (res <= 0) res = 'Не удалось вычислить';
       return res;
     },
 
