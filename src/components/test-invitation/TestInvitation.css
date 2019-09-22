@@ -1,0 +1,53 @@
+.icon-container{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: calc(100vw - 90px);
+  margin: 100px 0 0 -45px;
+  background-size: cover;
+}
+
+.icon-container > span{
+  position: absolute;
+  left: 90px;
+  width: 35%;
+  color: white;
+  font-size: 2.3em;
+  text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
+  cursor: default;
+  z-index: 10;
+}
+
+.icon-wrapper{
+  width: 390px;
+  height: 390px;
+  margin: 10vh 15vh;
+  position: relative;
+  z-index: 10;
+}
+
+.icon-wrapper span{
+  position: absolute;
+  top: 11vw;
+  left: 2vw;
+  font-size: 4em;
+  color: var(--orange);
+  z-index: 10;
+  transform: rotateZ(-29deg);
+  cursor: pointer;
+}
+
+.icon-wrapper,
+.icon-wrapper svg,
+.icon-wrapper span{
+  transition: .5s;
+}
+
+.icon-wrapper:hover span{
+  color: black;
+}
+
+.icon-wrapper:hover{
+  transform: scale(1.1);
+}
