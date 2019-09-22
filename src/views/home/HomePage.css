@@ -1,0 +1,13 @@
+.main-header{
+  text-align: center;
+  margin-top: 0;
+  letter-spacing: normal;
+  font-weight: bold;
+}
+
+.circle-nav-buttons{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10vh 3vw 0;
+}
