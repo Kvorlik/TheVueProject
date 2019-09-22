@@ -1,0 +1,28 @@
+.content-area {
+  padding: 0 45px;
+}
+
+.content {
+  margin: 0 20%;
+  padding: 45px 45px;
+  border-radius: 6px;
+  background: white;
+  background-repeat: no-repeat;
+  position: relative;
+  font-size: 20px;
+  overflow-x: hidden;
+  box-shadow:
+  0 3px 3px 0 rgba(60,64,67,.08),
+  0 3px 3px 3px rgba(60,64,67,.16);
+  transition: .8s;
+}
+
+.wrist-background{
+  background-image: url("../../backgrounds/wrist-background.jpg");
+  background-position-y: 0;
+}
+
+.forest-background{
+  background-image: url("../../backgrounds/forest-background.jpg");
+  background-position-y: 10em;
+}
