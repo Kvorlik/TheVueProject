@@ -1,0 +1,22 @@
+.underline span{
+  text-decoration: none;
+  position: relative;
+  font-size: 20px;
+}
+
+.underline span::before{
+  content: '';
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: .8s;
+  z-index: 10;
+}
+
+.underline span:hover::before{
+  width: 100%;
+  left: 0;
+}
