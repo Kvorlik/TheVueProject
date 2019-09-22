@@ -1,0 +1,7 @@
+.test-invitation{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 11rem; /* Новая фича для flex */
+  margin-top: 45px;
+}
