@@ -1,0 +1,36 @@
+button{
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.link-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  background-color: var(--orange);
+  border-radius: 6px;
+  box-shadow:
+  0 3px 3px 0 rgba(60,64,67,.08),
+  0 3px 3px 3px rgba(60,64,67,.16);
+  transition: .2s;
+}
+
+.link-button:hover{
+  cursor: pointer;
+  box-shadow:
+  0 6px 6px 0 rgba(60,64,67,.2),
+  0 6px 6px 6px rgba(60,64,67,.2);
+  transform: translateY(-5px);
+}
+
+.link-button:active{
+  transform: translateY(5px);
+  box-shadow:
+  0 3px 3px 0 rgba(60,64,67,.08),
+  0 3px 3px 3px rgba(60,64,67,.16);
+}
