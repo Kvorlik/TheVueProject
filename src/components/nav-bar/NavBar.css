@@ -1,0 +1,9 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+}
+
+#third {
+  margin-left: 2em;
+}
