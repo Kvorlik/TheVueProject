@@ -1,0 +1,16 @@
+.content-area {
+  padding: 0 45px;
+}
+
+.content {
+  padding: 45px 45px;
+  border-radius: 6px;
+  background: white;
+  position: relative;
+  font-size: 20px;
+  overflow-x: hidden;
+  box-shadow:
+  0 3px 3px 0 rgba(60,64,67,.08),
+  0 3px 3px 3px rgba(60,64,67,.16);
+  transition: .8s;
+}
