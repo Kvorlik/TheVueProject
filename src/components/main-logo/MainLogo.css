@@ -1,0 +1,8 @@
+.logo img {
+  height: 80px;
+  border-radius: 6px;
+}
+
+.logo:hover {
+  opacity: .8;
+}
