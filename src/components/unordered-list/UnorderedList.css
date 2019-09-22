@@ -1,0 +1,27 @@
+ul{
+  list-style:none;
+  padding: 0 0 2em 1em;
+}
+
+li {
+  margin: 0.5em 0;
+}
+ 
+li::before{
+  content: '';
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  vertical-align: middle;
+  margin-right: 0.5em;
+}
+
+.positive li::before {
+  background: url("./images/positive.png") no-repeat;
+  background-size: cover;
+}
+
+.negative li::before {
+  background: url("./images/negative.png") no-repeat;
+  background-size: cover;
+}
