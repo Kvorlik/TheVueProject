@@ -1,0 +1,22 @@
+.titles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 150px auto;
+  color: white;
+  text-shadow:
+  0 15px 102.86px rgba(0,0,0,.7),
+  0 15px 40.02px rgba(0,0,0,.21);
+  width: 900px;
+  position: relative;
+}
+
+.headertitle {
+  font-weight: bold;
+  font-size: 100px;
+}
+
+.headersubtitle {
+  font-size: 25px;
+  font-style: italic;
+}
