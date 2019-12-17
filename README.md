@@ -20,8 +20,6 @@ npm run build //compiles and minifies for production
 ```
 
 ### Compilation
-Note that you will receive error in console of your browser if you want to clone this repository and run compilation locally. This is because the `/src/firebase/init.js` file contains empty config values ​​due to security reasons.
-
 To try the app, you can follow the link above or add your firebase project initialization file in `/src/firebase/init.js`.  
 [Here](https://firebase.google.com/docs/web/setup) are the detailed steps how to do that.  
 You will also need to create two firestore collections in your firebase project: `exercises` and `user-statistics`.  
